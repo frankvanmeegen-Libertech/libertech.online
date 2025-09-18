@@ -868,7 +868,71 @@
             }
         }
 
-        /* Scroll animations */
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .cookie-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cookie-accept {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .cookie-accept:hover {
+            background: #0d9068;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
+                width: 100%;
+            }
+        }
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -905,7 +969,7 @@
                 <p>Niet meer kiezen tussen je bedrijf en de belangrijkste zaken in het leven</p>
                 <div class="hero-buttons">
                     <a href="#calculator" class="cta-button pulse" onclick="trackClick('hero_calculate')">Help mij nu</a>
-                    <a href="#verhaal" class="secondary-button">Waarom Libertech</a>
+                    <a href="#verhaal" class="secondary-button" onclick="trackClick('hero_waarom_libertech')">Waarom Libertech</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1180,7 +1244,49 @@
         </div>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-text">
+            We gebruiken cookies voor analytische doeleinden om onze website te verbeteren.
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-accept" onclick="acceptCookies()">Akkoord</button>
+        </div>
+    </div>
+
     <script>
+        // Cookie consent functionality
+        function acceptCookies() {
+            // Set cookie consent for 1 year
+            const expiryDate = new Date();
+            expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+            document.cookie = `cookieConsent=accepted; expires=${expiryDate.toUTCString()}; path=/`;
+            
+            // Hide banner
+            const banner = document.getElementById('cookieBanner');
+            banner.classList.remove('show');
+            
+            // Track consent
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cookie_consent_given', {
+                    'event_category': 'privacy'
+                });
+            }
+        }
+
+        function checkCookieConsent() {
+            // Check if consent already given
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('cookieConsent='))) {
+                return; // Consent already given
+            }
+            
+            // Show banner after a short delay
+            setTimeout(() => {
+                const banner = document.getElementById('cookieBanner');
+                banner.classList.add('show');
+            }, 2000);
+        }
+
         // Enhanced tracking and booking functions
         function trackClick(buttonName, customData = {}) {
             // Google Analytics 4 tracking
@@ -1408,6 +1514,9 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Check cookie consent
+            checkCookieConsent();
+            
             // Initialize calculator
             calculateMainROI();
             

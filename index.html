@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libertech - Vrijheid dankzij technologie</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R381760PMJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R381760PMJ');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2733a0;
+            --primary-light: #3b4bbd;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(39, 51, 160, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 6rem;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,138.7C672,149,768,203,864,213.3C960,224,1056,192,1152,165.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .secondary-button:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-image {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 4rem 6rem;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .problem-cards {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .problem-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 4rem 6rem;
+            background: white;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .quote {
+            background: var(--light);
+            padding: 2rem;
+            border-left: 4px solid var(--secondary);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .story-visual {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .story-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 4rem 6rem;
+            background: var(--light);
+        }
+
+        .calculator-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .calculator-header {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .calculator-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .calculator-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calculator-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .input-section {
+            padding: 3rem;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .input-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .input-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .input-group input[type="number"],
+        .input-group input[type="range"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .input-group input[type="range"] {
+            -webkit-appearance: none;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            outline: none;
+            padding: 0;
+        }
+
+        .input-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .range-display {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .inspiration-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .inspiration-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .inspiration-box p {
+            font-style: italic;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .results-section {
+            padding: 3rem;
+            background: var(--primary);
+            color: white;
+        }
+
+        .results-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .results-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+
+        .result-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .total-roi {
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            background: var(--secondary);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .total-roi h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .total-roi .roi-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .payback-period {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 4rem 6rem;
+            background: white;
+        }
+
+        .solution-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .solution-steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Results Section */
+        .results-page-section {
+            padding: 4rem 6rem;
+            background: var(--light);
+        }
+
+        .results-page-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .results-page-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .result-item .big-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .result-item h4 {
+            color: var(--primary);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 4rem 6rem;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .white-button {
+            background: white;
+            color: var(--primary);
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .white-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 6rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Pulse animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(39, 51, 160, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(39, 51, 160, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(39, 51, 160, 0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .problem-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .story-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .calculator-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .solution-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .results-page-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-cta {
+                padding: 4rem 1.5rem;
+            }
+
+            footer {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-page-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                LIBERTECH
+            </a>
+            <div class="nav-links">
+                <a href="#verhaal" onclick="trackClick('nav_waarom_libertech')">Waarom Libertech</a>
+                <a href="#calculator" onclick="trackClick('nav_calculator')">Calculator</a>
+                <a href="#oplossing" onclick="trackClick('nav_oplossing')">Oplossing</a>
+                <a href="#contact" onclick="trackClick('nav_contact')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <h1>Bedrijfsgroei zonder opoffering</h1>
+                <p>Niet meer kiezen tussen je bedrijf en de belangrijkste zaken in het leven</p>
+                <div class="hero-buttons">
+                    <a href="#calculator" class="cta-button pulse" onclick="trackClick('hero_calculate')">Help mij nu</a>
+                    <a href="#verhaal" class="secondary-button">Mijn Verhaal</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,255,255,0.1)" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="50" y="50" width="100" height="100" fill="url(#grad1)" rx="10" />
+                    <rect x="170" y="50" width="100" height="100" fill="url(#grad1)" rx="10" />
+                    <rect x="50" y="170" width="100" height="100" fill="url(#grad1)" rx="10" />
+                    <rect x="170" y="170" width="100" height="100" fill="url(#grad1)" rx="10" />
+                    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="10,5" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <h2 class="section-title">Herken je deze offers?</h2>
+        <p class="section-subtitle">De prijs die je betaalt voor bedrijfssucces</p>
+        <div class="problem-cards">
+            <div class="problem-card fade-in">
+                <div class="problem-icon">👨‍👩‍👧‍👦</div>
+                <h3>Je gezin ziet je wel, maar bent er niet</h3>
+                <p>Fysiek aanwezig tijdens het eten, maar met je gedachten bij klanten, deadlines en brandjes</p>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="problem-icon">🌙</div>
+                <h3>Wakker liggen van je bedrijf</h3>
+                <p>Elke nacht die knoop in je maag. Wat als een klant wegloopt? Wat als een werknemer uitvalt?</p>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="problem-icon">📱</div>
+                <h3>Altijd 'aan' moeten staan</h3>
+                <p>Vakantie? Weekend? Die bestaan niet echt. Er is altijd wel iets dat jouw aandacht vraagt</p>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="problem-icon">⚖️</div>
+                <h3>Constant kiezen tussen bedrijf en leven</h3>
+                <p>Elke keuze voelt als verraad. Naar de voetbalwedstrijd van je kind of die belangrijke afspraak?</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.2rem; color: #6b7280; font-style: italic;">
+                "Hard werken voor je gezin, maar je gezin daardoor missen. De pijnlijkste paradox van het ondernemerschap."
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section" id="verhaal">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem; color: var(--primary); font-weight: 600;">Ondernemer voor vrijheid, maar gevangen in je bedrijf</h2>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; line-height: 1.8;">Veel ondernemers zijn gaan ondernemen voor meer vrijheid, maar ervaren vaak het tegenovergestelde. Voor mij was dit niet anders. Altijd stress over tevreden klanten of tevreden werknemers en 1 ding was zeker, dit was nooit in balans. Er was altijd wel een nieuw brandje om te blussen.</p>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; line-height: 1.8;">Ook al was ik fysiek veel thuis, ik was met mijn gedachten altijd bij mijn werk. Totdat ik besefte dat ik het anders wilde.</p>
+        </div>
+        <div class="story-content">
+            <div class="story-text">
+                <div class="quote">
+                    "Sinds de verkoop van mijn bedrijf ervaar ik vrijheid. De vrijheid om te werken waar en wanneer ik wil. De ambitie blijft, maar gaat niet meer ten kosten van de echt belangrijke zaken in het leven."
+                </div>
+            </div>
+            <div class="story-visual">
+                <h3>Succes zonder Offers</h3>
+                <p style="margin-bottom: 2rem;">Van 'ik moet kiezen' naar 'ik kan beide'</p>
+                <div style="font-size: 3rem; margin: 1rem 0;">🎯</div>
+                <p>Doelen halen in je bedrijf en in je leven</p>
+            </div>
+        </div>
+        <div style="max-width: 900px; margin: 3rem auto; text-align: center;">
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">Nu hoef je niet je bedrijf te verkopen om dezelfde vrijheid te ervaren. Door je bedrijf anders te organiseren en meer te automatiseren kan je het beste van beide werelden bereiken. Ik help je hier graag bij.</p>
+            <a href="#calculator" class="cta-button" onclick="trackClick('story_help_mij_nu')">Help mij nu</a>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h2>Bedrijfsgroei zonder opoffering</h2>
+                <p>Niet meer kiezen tussen je bedrijf en de belangrijkste zaken in het leven</p>
+            </div>
+
+            <div class="calculator-content">
+                <div class="input-section">
+                    <h3>Je Huidige Situatie</h3>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="revenue-main">Huidige jaaromzet (€)</label>
+                            <input type="number" id="revenue-main" value="500000" min="50000" max="10000000" oninput="calculateMainROI()">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="hours-main">Uren per week die je werkt</label>
+                            <input type="range" id="hours-main" min="40" max="80" value="65" oninput="calculateMainROI()">
+                            <div class="range-display" id="hoursDisplayMain">65 uur per week</div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="admin-percentage-main">Percentage tijd aan administratie/handmatig werk</label>
+                            <input type="range" id="admin-percentage-main" min="10" max="50" value="30" step="10" oninput="calculateMainROI()">
+                            <div class="range-display" id="adminPercentageDisplayMain">30% van je tijd</div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="current-vacation-main">Hoeveel weken vakantie neem je nu echt per jaar?</label>
+                            <input type="range" id="current-vacation-main" min="0" max="8" value="2" oninput="calculateMainROI()">
+                            <div class="range-display" id="vacationDisplayMain">2 weken per jaar</div>
+                        </div>
+                    </div>
+
+                    <div class="inspiration-box">
+                        <h4>De Ondernemersdroom</h4>
+                        <p>"Alle schoolvakanties vrij zijn. Elke zomer 6 weken in het buitenland. Echt aanwezig bij wat belangrijk is. Die droom is binnen handbereik."</p>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3>Je Vrijheidswinst</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h3>🏖️ Extra Vakantieweken</h3>
+                            <div class="result-value" id="vacationWeeksMain">10 weken extra</div>
+                            <div class="result-description">Van 2 naar 12 weken per jaar - 40 weken werken, 12 weken leven</div>
+                        </div>
+
+                        <div class="result-card">
+                            <h3>⏰ Tijd Voor Wat Belangrijk Is</h3>
+                            <div class="result-value" id="meaningfulTimeMain">1232</div>
+                            <div class="result-description">Extra uren per jaar die je er echt bent voor wat telt</div>
+                        </div>
+
+                        <div class="result-card">
+                            <h3>💰 Extra Bedrijfswinst</h3>
+                            <div class="result-value" id="extraRevenueMain">€75.000</div>
+                            <div class="result-description">Door betere organisatie en focus op groei in plaats van operatie</div>
+                        </div>
+
+                        <div class="result-card">
+                            <h3>😌 Minder Stress</h3>
+                            <div class="result-value" id="stressReductionMain">80%</div>
+                            <div class="result-description">Minder brandjes blussen, meer controle over je bedrijf</div>
+                        </div>
+                    </div>
+
+                    <div class="total-roi">
+                        <h3>Je Totale Winst per jaar</h3>
+                        <div class="roi-value" id="totalBenefitMain">1232 uur + €75.000</div>
+                        <div class="payback-period">
+                            <strong>Gemiddelde investering:</strong> <span id="yearlyInvestmentMain">€15.000</span> per jaar<br>
+                            <strong>Terugverdientijd:</strong> <span id="paybackTimeMain">0.8 maanden</span>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                        <p style="font-style: italic; opacity: 0.9; line-height: 1.5; margin-bottom: 1.5rem;">
+                            "6 weken zomer in het buitenland, alle herfstvakanties mee, kerstvakantie echt vrij.<br>
+                            <strong>Terwijl je bedrijf sneller groeit dan ooit.</strong>"
+                        </p>
+                        <a href="#contact" class="cta-button" style="background: white; color: var(--primary);" onclick="bookMeeting()">Ja dit wil ik</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="oplossing">
+        <h2>Groei zonder opoffering</h2>
+        <div class="solution-steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h3>Gratis Kennismaking</h3>
+                <p>We ontdekken samen je grootste bottleneck in een vrijblijvend gesprek. Geen verplichtingen, wel direct inzicht.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <h3>Wow-Prototype</h3>
+                <p>We bouwen een tastbaar prototype voor jouw grootste pijnpunt. Zie en voel hoe de oplossing werkt voordat je investeert.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <h3>Maandelijks Meegroei-Model</h3>
+                <p>Op basis van het prototype bepalen we samen een eerlijk maandbedrag. Kosten gaan samen met genoten waarde - geen risico, wel resultaat.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">4</div>
+                <h3>Groei Zonder Offers</h3>
+                <p>Je oplossing wordt geïmplementeerd en geperfectioneerd. Je bedrijf groeit, jij bent vrij om te leven.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-page-section" id="resultaten">
+        <h2>Wat Onze Klanten Bereiken</h2>
+        <div class="results-page-grid">
+            <div class="result-item fade-in">
+                <span class="big-number">80%</span>
+                <h4>Minder Tijd Aan Administratie</h4>
+                <p>Van uren naar minuten voor terugkerende taken</p>
+            </div>
+            <div class="result-item fade-in">
+                <span class="big-number">100%</span>
+                <h4>Rustiger Slapen</h4>
+                <p>Wakker worden zonder die knoop in je maag</p>
+            </div>
+            <div class="result-item fade-in">
+                <span class="big-number">2x</span>
+                <h4>Sneller Groeien</h4>
+                <p>Zonder de overhead te verdubbelen</p>
+            </div>
+            <div class="result-item fade-in">
+                <span class="big-number">∞</span>
+                <h4>Échte Vrije Tijd</h4>
+                <p>Voor familie, hobby's en wat écht belangrijk is</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <div class="quote">
+                "Stel je voor: geen keuzes meer tussen bedrijf en leven. Beide succesvol, beide vervullend."
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <h2>Stop Met Kiezen. Begin Met Beide.</h2>
+        <p>Ontdek hoe je bedrijf kán groeien zonder dat jij offers brengt</p>
+        <div>
+            <a href="#calculator" class="white-button" onclick="trackClick('final_help_mij_nu')">Help mij nu</a>
+        </div>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            <p style="font-size: 1.1rem; opacity: 0.9;">
+                <strong>Libertech</strong> - Vrijheid dankzij Technologie<br>
+                Voor ondernemers die niet meer willen kiezen tussen succes en leven
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:info@libertech.online" onclick="trackClick('footer_email')">info@libertech.online</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#oplossing" onclick="trackClick('footer_bedrijfsanalyse')">Bedrijfsanalyse</a>
+                <a href="#oplossing" onclick="trackClick('footer_procesautomatisering')">Procesautomatisering</a>
+                <a href="#oplossing" onclick="trackClick('footer_gratis_prototypes')">Gratis Prototypes</a>
+            </div>
+            <div class="footer-section">
+                <h4>Libertech</h4>
+                <p>Vrijheid dankzij Technologie</p>
+                <p>Voor ondernemers tot 50 werknemers die klaar zijn om te groeien zonder zich op te offeren</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Libertech.online - Alle rechten voorbehouden</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced tracking and booking functions
+        function trackClick(buttonName, customData = {}) {
+            // Google Analytics 4 tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'button_click', {
+                    'event_category': 'engagement',
+                    'event_label': buttonName,
+                    'button_location': getButtonLocation(buttonName),
+                    'page_section': getPageSection(buttonName),
+                    ...customData
+                });
+            }
+            
+            // Console logging for debugging
+            console.log('Button clicked:', buttonName, customData);
+            
+            // Track scroll position when button was clicked
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'button_click_with_scroll', {
+                    'event_category': 'user_behavior',
+                    'event_label': buttonName,
+                    'scroll_depth': scrollPercent
+                });
+            }
+        }
+
+        function getButtonLocation(buttonName) {
+            if (buttonName.startsWith('nav_')) return 'navigation';
+            if (buttonName.startsWith('hero_')) return 'hero_section';
+            if (buttonName.startsWith('story_')) return 'story_section';
+            if (buttonName.startsWith('final_')) return 'final_cta';
+            if (buttonName.startsWith('footer_')) return 'footer';
+            if (buttonName === 'calendar_booking') return 'calculator_results';
+            return 'unknown';
+        }
+
+        function getPageSection(buttonName) {
+            const sections = {
+                'nav_': 'navigation',
+                'hero_': 'hero',
+                'story_': 'waarom_libertech',
+                'final_': 'final_cta',
+                'footer_': 'footer',
+                'calendar_booking': 'calculator'
+            };
+            
+            for (let prefix in sections) {
+                if (buttonName.startsWith(prefix) || buttonName === 'calendar_booking') {
+                    return sections[prefix];
+                }
+            }
+            return 'other';
+        }
+
+        function bookMeeting() {
+            // Get calculator results
+            const revenue = parseInt(document.getElementById('revenue-main').value) || 500000;
+            const hours = parseInt(document.getElementById('hours-main').value) || 65;
+            const adminPercentage = parseInt(document.getElementById('admin-percentage-main').value) || 30;
+            const currentVacation = parseInt(document.getElementById('current-vacation-main').value) || 2;
+            
+            // Calculate key metrics for the meeting
+            const investmentPercentage = 0.02;
+            const yearlyInvestment = Math.ceil((revenue * investmentPercentage) / 1000) * 1000;
+            const potentialSavings = Math.round(revenue * 0.15);
+            const timeSaved = Math.round((adminPercentage / 100) * hours * 0.8 * 52); // Hours per year
+            
+            // Enhanced tracking for booking attempt
+            trackClick('calendar_booking', {
+                'revenue': revenue,
+                'hours_per_week': hours,
+                'admin_percentage': adminPercentage,
+                'vacation_weeks': currentVacation,
+                'calculated_investment': yearlyInvestment,
+                'calculated_savings': potentialSavings,
+                'conversion_event': 'calendly_click'
+            });
+            
+            // Additional conversion tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'G-R381760PMJ',
+                    'value': revenue,
+                    'currency': 'EUR',
+                    'event_category': 'lead_generation',
+                    'potential_client_value': yearlyInvestment
+                });
+            }
+            
+            // Create URL with calculator data as query parameters for your reference
+            const calendlyUrl = `https://calendly.com/libertech/30min?a1=${revenue}&a2=${hours}&a3=${adminPercentage}&a4=${currentVacation}&a5=${yearlyInvestment}&a6=${potentialSavings}`;
+            
+            // Open Calendly in new tab
+            window.open(calendlyUrl, '_blank');
+        }
+
+        // ROI Calculator for main page
+        function calculateMainROI() {
+            // Get input values
+            const revenue = parseInt(document.getElementById('revenue-main').value) || 500000;
+            const hours = parseInt(document.getElementById('hours-main').value) || 65;
+            const adminPercentage = parseInt(document.getElementById('admin-percentage-main').value) || 30;
+            const currentVacation = parseInt(document.getElementById('current-vacation-main').value) || 2;
+            
+            // Calculate admin hours from percentage
+            const adminHours = Math.round((adminPercentage / 100) * hours);
+            
+            // Fixed values
+            const dreamVacation = 12; // Fixed at 12 weeks
+            const investmentPercentage = 0.02; // 2% of revenue
+
+            // Update displays
+            document.getElementById('hoursDisplayMain').textContent = hours + ' uur per week';
+            document.getElementById('adminPercentageDisplayMain').textContent = adminPercentage + '% van je tijd';
+            document.getElementById('vacationDisplayMain').textContent = currentVacation + ' weken per jaar';
+
+            // Calculations
+            const hourlyRate = 50;
+            const familyTimeMultiplier = 2;
+
+            // Time savings (80% of admin hours can be automated)
+            const timeSavedWeekly = Math.round(adminHours * 0.8);
+
+            // Extra revenue from growth opportunities
+            const growthBlocked = 30;
+            const potentialGrowthRevenue = revenue * (growthBlocked / 100);
+            const realizedGrowthRevenue = potentialGrowthRevenue * 0.7;
+
+            // Productivity gains from stress reduction (15% improvement)
+            const productivityGains = revenue * 0.15;
+
+            // Value of freed time for family (50% of freed time goes to family)
+            const familyTimeValue = (timeSavedWeekly * 0.5) * familyTimeMultiplier * hourlyRate * 52;
+
+            // Vacation calculation - now with 12 weeks target
+            const vacationIncrease = Math.max(0, dreamVacation - currentVacation);
+            const vacationHours = vacationIncrease * 40;
+            const vacationValue = vacationHours * hourlyRate * familyTimeMultiplier;
+
+            // Total benefits
+            const totalTimeSaved = timeSavedWeekly;
+            const extraRevenue = Math.round(realizedGrowthRevenue + productivityGains);
+            const freedomValue = Math.round(familyTimeValue + vacationValue);
+            const totalBenefit = extraRevenue + freedomValue;
+
+            // Investment and ROI
+            const yearlyInvestment = Math.ceil((revenue * investmentPercentage) / 1000) * 1000;
+            const netBenefit = totalBenefit - yearlyInvestment;
+            const roiPercentage = Math.round(((netBenefit / yearlyInvestment) * 100));
+            const paybackMonths = Math.round((yearlyInvestment / (totalBenefit / 12)) * 10) / 10;
+
+            // Update results - balanced view of life values and business growth
+            document.getElementById('vacationWeeksMain').textContent = vacationIncrease + ' weken extra';
+            
+            // Calculate meaningful time (freed time + vacation time in hours per year)
+            const meaningfulTime = Math.round((totalTimeSaved * 52) + vacationHours);
+            document.getElementById('meaningfulTimeMain').textContent = meaningfulTime;
+            
+            // Extra revenue (simplified calculation for business growth)
+            const businessGrowthRevenue = Math.round(extraRevenue * 0.5); // More conservative estimate
+            document.getElementById('extraRevenueMain').textContent = '€' + businessGrowthRevenue.toLocaleString('nl-NL');
+            
+            // Stress reduction (80% less operational stress)
+            document.getElementById('stressReductionMain').textContent = '80%';
+            
+            // Update total benefit to show combined life and business value
+            const totalLifeBenefit = meaningfulTime + ' uur + €' + businessGrowthRevenue.toLocaleString('nl-NL');
+            document.getElementById('totalBenefitMain').textContent = totalLifeBenefit;
+            document.getElementById('yearlyInvestmentMain').textContent = '€' + yearlyInvestment.toLocaleString('nl-NL') + ' per jaar';
+            
+            // Update payback time only
+            document.getElementById('paybackTimeMain').textContent = paybackMonths + ' maanden';
+
+            // Add animation effect
+            const resultCards = document.querySelectorAll('.result-card, .total-roi');
+            resultCards.forEach(card => {
+                card.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize calculator
+            calculateMainROI();
+            
+            // Observe elements for animation
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Add smooth transitions
+        const style = document.createElement('style');
+        style.textContent = `
+            .result-card, .total-roi {
+                transition: transform 0.2s ease;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

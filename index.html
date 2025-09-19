@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libertech - Vrijheid dankzij technologie</title>
+    <meta name="description" content="Libertech helpt ondernemers groeien zonder opoffering door slimme automatisering en procesoptimalisatie. Meer tijd voor wat belangrijk is.">
+    <meta name="keywords" content="bedrijfsautomatisering, procesoptimalisatie, ondernemers, vrijheid, technologie, groei">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://libertech.online/">
+    <meta property="og:title" content="Libertech - Vrijheid dankzij technologie">
+    <meta property="og:description" content="Groei je bedrijf zonder je leven op te offeren. Ontdek hoe automatisering je meer tijd geeft voor wat echt belangrijk is.">
+    <meta property="og:image" content="https://libertech.online/assets/Libertech%20Logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://libertech.online/">
+    <meta property="twitter:title" content="Libertech - Vrijheid dankzij technologie">
+    <meta property="twitter:description" content="Groei je bedrijf zonder je leven op te offeren. Ontdek hoe automatisering je meer tijd geeft voor wat echt belangrijk is.">
+    <meta property="twitter:image" content="https://libertech.online/assets/Libertech%20Logo.png">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R381760PMJ"></script>
@@ -61,9 +77,11 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -76,6 +94,7 @@
             text-decoration: none;
             color: var(--dark);
             transition: color 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
@@ -172,6 +191,16 @@
 
         .hero-image {
             animation: float 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         @keyframes fadeInUp {
@@ -824,6 +853,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .logo img {
+                height: 35px;
+            }
+
             /* Center all CTA buttons on mobile */
             .cta-button, .white-button, .secondary-button {
                 display: inline-block;
@@ -936,6 +969,8 @@
                 width: 100%;
             }
         }
+
+        /* Scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -946,6 +981,125 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .modal-body h3 {
+            color: var(--primary);
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .modal-body h4 {
+            color: var(--dark);
+            margin: 1.5rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .modal-body ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .contact-box {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .contact-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -953,7 +1107,8 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                LIBERTECH
+                <img src="assets/Libertech logo wit.png" alt="Libertech" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div style="display: none; align-items: center; font-size: 1.5rem; font-weight: bold; color: var(--primary);">LIBERTECH</div>
             </a>
             <div class="nav-links">
                 <a href="#verhaal" onclick="trackClick('nav_waarom_libertech')">Waarom Libertech</a>
@@ -976,27 +1131,15 @@
                 </div>
             </div>
             <div class="hero-image">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.3)" />
-                            <stop offset="100%" style="stop-color:rgba(255,255,255,0.1)" />
-                        </linearGradient>
-                    </defs>
-                    <rect x="50" y="50" width="100" height="100" fill="url(#grad1)" rx="10" />
-                    <rect x="170" y="50" width="100" height="100" fill="url(#grad1)" rx="10" />
-                    <rect x="50" y="170" width="100" height="100" fill="url(#grad1)" rx="10" />
-                    <rect x="170" y="170" width="100" height="100" fill="url(#grad1)" rx="10" />
-                    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="10,5" />
-                </svg>
+                <img src="assets/Libertech Logo.png" alt="Libertech - Vrijheid dankzij technologie" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
 
     <!-- Problem Section -->
     <section class="problem-section">
-        <h2 class="section-title">Herken je deze offers?</h2>
-        <p class="section-subtitle">De prijs die je betaalt voor bedrijfssucces</p>
+        <h2 class="section-title">Herken je deze pijnpunten?</h2>
+        <p class="section-subtitle">De verborgen kosten van bedrijfssucces</p>
         <div class="problem-cards">
             <div class="problem-card fade-in">
                 <div class="problem-icon">👨‍👩‍👧‍👦</div>
@@ -1044,7 +1187,7 @@
                 </div>
             </div>
             <div class="story-visual">
-                <h3>Succes zonder Offers</h3>
+                <h3>Succes zonder Opofferingen</h3>
                 <p style="margin-bottom: 2rem;">Van 'ik moet kiezen' naar 'ik kan beide'</p>
                 <div style="font-size: 3rem; margin: 1rem 0;">🎯</div>
                 <p>Doelen halen in je bedrijf en in je leven</p>
@@ -1149,7 +1292,7 @@
 
     <!-- Solution Section -->
     <section class="solution-section" id="oplossing">
-        <h2>Groei zonder opoffering</h2>
+        <h2>Groei zonder opofferingen</h2>
         <div class="solution-steps">
             <div class="step fade-in">
                 <div class="step-number">1</div>
@@ -1168,7 +1311,7 @@
             </div>
             <div class="step fade-in">
                 <div class="step-number">4</div>
-                <h3>Groei Zonder Offers</h3>
+                <h3>Groei Zonder Opofferingen</h3>
                 <p>Je oplossing wordt geïmplementeerd en geperfectioneerd. Je bedrijf groeit, jij bent vrij om te leven.</p>
             </div>
         </div>
@@ -1229,6 +1372,13 @@
             <div class="footer-section">
                 <h4>Contact</h4>
                 <a href="mailto:info@libertech.online" onclick="trackClick('footer_email')">info@libertech.online</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    Libertech.online B.V.<br>
+                    Deense Hoek 18<br>
+                    5737 PC Lieshout<br>
+                    Nederland<br>
+                    KvK: 91433398
+                </p>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
@@ -1241,9 +1391,14 @@
                 <p>Vrijheid dankzij Technologie</p>
                 <p>Voor ondernemers tot 50 werknemers die klaar zijn om te groeien zonder zich op te offeren</p>
             </div>
+            <div class="footer-section">
+                <h4>Juridisch</h4>
+                <a href="#privacy" onclick="openModal('privacy')">Privacyverklaring</a>
+                <a href="#algemene-voorwaarden" onclick="openModal('algemene-voorwaarden')">Algemene Voorwaarden</a>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Libertech.online - Alle rechten voorbehouden</p>
+            <p>&copy; 2025 Libertech.online B.V. - Alle rechten voorbehouden | KvK: 91433398</p>
         </div>
     </footer>
 
@@ -1254,6 +1409,176 @@
         </div>
         <div class="cookie-buttons">
             <button class="cookie-accept" onclick="acceptCookies()">Akkoord</button>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacyverklaring</h2>
+                <span class="close" onclick="closeModal('privacy')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Laatst bijgewerkt:</strong> September 2025</p>
+                
+                <h3>1. Wie zijn wij?</h3>
+                <div class="contact-box">
+                    <h4>Libertech.online B.V.</h4>
+                    <p>
+                        Deense Hoek 18<br>
+                        5737 PC Lieshout<br>
+                        Nederland<br>
+                        KvK: 91433398<br>
+                        E-mail: info@libertech.online
+                    </p>
+                </div>
+
+                <h3>2. Welke gegevens verzamelen wij?</h3>
+                <h4>Contactgegevens:</h4>
+                <ul>
+                    <li>Naam en bedrijfsnaam</li>
+                    <li>E-mailadres</li>
+                    <li>Telefoonnummer</li>
+                    <li>Bedrijfsinformatie (omzet, werkuren, enz.) via onze calculator</li>
+                </ul>
+                
+                <h4>Website analytics:</h4>
+                <ul>
+                    <li>Bezoekersstatistieken via Google Analytics</li>
+                    <li>Cookie-informatie voor website optimalisatie</li>
+                    <li>Klikgedrag en pagina-interacties</li>
+                </ul>
+
+                <h3>3. Waarvoor gebruiken wij uw gegevens?</h3>
+                <ul>
+                    <li>Het verstrekken van onze diensten en advies</li>
+                    <li>Contact opnemen voor afspraken en offertes</li>
+                    <li>Verbeteren van onze website en dienstverlening</li>
+                    <li>Het versturen van relevante bedrijfsinformatie (alleen met toestemming)</li>
+                </ul>
+
+                <h3>4. Hoe lang bewaren wij uw gegevens?</h3>
+                <p>Wij bewaren uw persoonsgegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld:</p>
+                <ul>
+                    <li>Contactgegevens: tot 2 jaar na laatste contact</li>
+                    <li>Projectgegevens: tot 7 jaar na afsluiting (wettelijke bewaarplicht)</li>
+                    <li>Analytics data: geanonimiseerd, conform Google Analytics beleid</li>
+                </ul>
+
+                <h3>5. Met wie delen wij uw gegevens?</h3>
+                <p>Wij delen uw gegevens alleen met:</p>
+                <ul>
+                    <li>Google Analytics (geanonimiseerd) voor websitestatistieken</li>
+                    <li>Calendly voor het inplannen van afspraken</li>
+                    <li>Onze eigen systemen (veilig opgeslagen in Nederland/EU)</li>
+                </ul>
+                <p>Wij verkopen nooit uw gegevens aan derden.</p>
+
+                <h3>6. Uw rechten</h3>
+                <p>U heeft het recht op:</p>
+                <ul>
+                    <li>Inzage in uw opgeslagen gegevens</li>
+                    <li>Correctie van onjuiste gegevens</li>
+                    <li>Verwijdering van uw gegevens</li>
+                    <li>Beperking van de verwerking</li>
+                    <li>Bezwaar tegen verwerking</li>
+                    <li>Gegevensoverdracht</li>
+                </ul>
+
+                <h3>7. Beveiliging</h3>
+                <p>Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beveiligen tegen verlies, misbruik en ongeautoriseerde toegang.</p>
+
+                <h3>8. Cookies</h3>
+                <p>Onze website gebruikt cookies voor:</p>
+                <ul>
+                    <li>Functionaliteit van de website</li>
+                    <li>Google Analytics (geanonimiseerd)</li>
+                    <li>Verbetering van gebruikerservaring</li>
+                </ul>
+
+                <div class="contact-box">
+                    <h4>Vragen over uw privacy?</h4>
+                    <p>Neem contact met ons op via info@libertech.online of bel ons voor een persoonlijke toelichting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Algemene Voorwaarden Modal -->
+    <div id="algemene-voorwaarden-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Algemene Voorwaarden</h2>
+                <span class="close" onclick="closeModal('algemene-voorwaarden')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>Laatst bijgewerkt:</strong> September 2025</p>
+                
+                <div class="contact-box">
+                    <h4>Libertech.online B.V.</h4>
+                    <p>
+                        Deense Hoek 18<br>
+                        5737 PC Lieshout<br>
+                        Nederland<br>
+                        KvK: 91433398<br>
+                        E-mail: info@libertech.online
+                    </p>
+                </div>
+
+                <h3>Artikel 1 - Toepasselijkheid</h3>
+                <p>Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, offertes en overeenkomsten tussen Libertech.online B.V. (hierna: "Libertech") en opdrachtgever, tenzij schriftelijk anders is overeengekomen.</p>
+
+                <h3>Artikel 2 - Offerte en Totstandkoming</h3>
+                <p>2.1 Alle aanbiedingen en offertes zijn vrijblijvend en geldig voor 30 dagen, tenzij anders vermeld.</p>
+                <p>2.2 Een overeenkomst komt tot stand door schriftelijke bevestiging door beide partijen of door aanvang van werkzaamheden door Libertech.</p>
+
+                <h3>Artikel 3 - Dienstverlening</h3>
+                <p>3.1 Libertech verleent diensten op het gebied van bedrijfsautomatisering, procesoptimalisatie en technologische oplossingen.</p>
+                <p>3.2 Diensten worden uitgevoerd conform de overeengekomen specificaties en planning.</p>
+                <p>3.3 Libertech heeft het recht werkzaamheden uit te besteden aan gekwalificeerde derden.</p>
+
+                <h3>Artikel 4 - Prijzen en Meerwerk</h3>
+                <p>4.1 Alle prijzen zijn exclusief BTW en andere heffingen, tenzij anders vermeld.</p>
+                <p><strong>4.2 Meerwerk wordt gefactureerd tegen €125,- per uur, tenzij anders overeengekomen.</strong></p>
+                <p>4.3 Meerwerk ontstaat wanneer werkzaamheden buiten de oorspronkelijke opdracht vallen en wordt alleen uitgevoerd na voorafgaande toestemming van opdrachtgever.</p>
+
+                <h3>Artikel 5 - Betaling</h3>
+                <p>5.1 Betaling dient te geschieden binnen 14 dagen na factuurdatum.</p>
+                <p>5.2 Bij overschrijding van de betalingstermijn is opdrachtgever van rechtswege in verzuim en is wettelijke rente verschuldigd.</p>
+                <p>5.3 Libertech heeft het recht om bij betalingsachterstand de werkzaamheden op te schorten.</p>
+
+                <h3>Artikel 6 - Intellectueel Eigendom</h3>
+                <p><strong>6.1 Alle door Libertech ontwikkelde systemen, code, documentatie en know-how blijven eigendom van Libertech.</strong></p>
+                <p><strong>6.2 Opdrachtgever verkrijgt een gebruiksrecht voor de overeengekomen doeleinden, maar geen eigendomsrecht.</strong></p>
+                <p>6.3 Het is opdrachtgever niet toegestaan de geleverde oplossingen te kopiëren, te wijzigen of door te verkopen zonder schriftelijke toestemming van Libertech.</p>
+
+                <h3>Artikel 7 - Aansprakelijkheid</h3>
+                <p><strong>7.1 Libertech is niet aansprakelijk voor indirecte schade, gevolgschade, gederfde winst of bedrijfsschade.</strong></p>
+                <p><strong>7.2 De totale aansprakelijkheid van Libertech is beperkt tot het gefactureerde bedrag voor de betreffende opdracht, met een maximum van €10.000.</strong></p>
+                <p>7.3 Libertech is niet aansprakelijk voor schade ontstaan door onjuiste of onvolledige informatie van opdrachtgever.</p>
+
+                <h3>Artikel 8 - Geheimhouding</h3>
+                <p>8.1 Beide partijen verplichten zich tot geheimhouding van alle vertrouwelijke informatie.</p>
+                <p>8.2 Deze verplichting blijft bestaan na beëindiging van de overeenkomst.</p>
+
+                <h3>Artikel 9 - Force Majeure</h3>
+                <p>9.1 Libertech is niet gehouden tot nakoming van verplichtingen indien zij daartoe verhinderd wordt door force majeure.</p>
+                <p>9.2 Force majeure omvat onder meer: natuurrampen, oorlog, pandemie, overheidsbeslissingen, internet- of serverstoring.</p>
+
+                <h3>Artikel 10 - Wijziging en Ontbinding</h3>
+                <p>10.1 Wijzigingen in de overeenkomst zijn alleen geldig indien schriftelijk overeengekomen.</p>
+                <p>10.2 Beide partijen kunnen de overeenkomst schriftelijk opzeggen met inachtneming van een opzegtermijn van 30 dagen.</p>
+
+                <h3>Artikel 11 - Toepasselijk Recht</h3>
+                <p>11.1 Op alle overeenkomsten is Nederlands recht van toepassing.</p>
+                <p>11.2 Geschillen worden voorgelegd aan de bevoegde rechter te 's-Hertogenbosch.</p>
+
+                <div class="contact-box">
+                    <h4>Vragen over deze voorwaarden?</h4>
+                    <p>Neem contact met ons op via info@libertech.online. We bespreken graag de details van uw specifieke situatie.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1514,6 +1839,47 @@
                 }
             });
         }, observerOptions);
+
+        // Modal functions
+        function openModal(modalType) {
+            const modal = document.getElementById(modalType + '-modal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                
+                // Track modal opening
+                trackClick('modal_open_' + modalType);
+            }
+        }
+
+        function closeModal(modalType) {
+            const modal = document.getElementById(modalType + '-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {

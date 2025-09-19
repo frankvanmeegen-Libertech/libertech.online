@@ -625,6 +625,46 @@
             font-weight: 600;
         }
 
+        /* Results Section */
+        .results-page-section {
+            padding: 4rem 6rem;
+            background: var(--light);
+        }
+
+        .results-page-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .results-page-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .result-item .big-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .result-item h4 {
+            color: var(--primary);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
         /* Case Study Section */
         .case-study-section {
             padding: 4rem 6rem;
@@ -786,61 +826,6 @@
             color: var(--dark);
         }
 
-        @media (max-width: 768px) {
-            .case-study-section {
-                padding: 4rem 1.5rem;
-            }
-
-            .case-study-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .case-study-header h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Results Section */
-        .results-page-section {
-            padding: 4rem 6rem;
-            background: var(--light);
-        }
-
-        .results-page-section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .results-page-grid {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .result-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .result-item .big-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--secondary);
-            display: block;
-        }
-
-        .result-item h4 {
-            color: var(--primary);
-            margin: 1rem 0;
-            font-weight: 600;
-        }
-
         /* Final CTA Section */
         .final-cta {
             padding: 4rem 6rem;
@@ -965,6 +950,10 @@
                 text-align: center;
             }
 
+            .case-study-section {
+                padding: 4rem 1.5rem;
+            }
+
             .final-cta {
                 padding: 4rem 1.5rem;
             }
@@ -1015,6 +1004,11 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
+            }
+
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .nav-links {
@@ -1324,97 +1318,6 @@
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="results-page-section" id="resultaten">
-        <h2>Wat Onze Klanten Bereiken</h2>
-        <div class="results-page-grid">
-            <div class="result-item fade-in">
-                <span class="big-number">80%</span>
-                <h4>Minder Tijd Aan Administratie</h4>
-                <p>Van uren naar minuten voor terugkerende taken</p>
-            </div>
-            <div class="result-item fade-in">
-                <span class="big-number">100%</span>
-                <h4>Rustiger Slapen</h4>
-                <p>Wakker worden zonder die knoop in je maag</p>
-            </div>
-            <div class="result-item fade-in">
-                <span class="big-number">2x</span>
-                <h4>Sneller Groeien</h4>
-                <p>Zonder de overhead te verdubbelen</p>
-            </div>
-            <div class="result-item fade-in">
-                <span class="big-number">∞</span>
-                <h4>Échte Vrije Tijd</h4>
-                <p>Voor familie, hobby's en wat écht belangrijk is</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 3rem;">
-            <div class="quote">
-                "Stel je voor: geen keuzes meer tussen bedrijf en leven. Beide succesvol, beide vervullend."
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Study Section -->
-    <section class="case-study-section">
-        <div class="case-study-container">
-            <div class="case-study-header">
-                <h2>Heroes Den Bosch en Libertech samen naar de top</h2>
-                <p class="case-study-subtitle">Hoe automatisering ambitieuze organisaties helpt meer impact te maken</p>
-            </div>
-            
-            <div class="case-study-content">
-                <div class="case-study-text">
-                    <p>Nederlands meest succesvolle basketbalclub Heroes Den Bosch heeft ambitieuze doelstellingen: de beste basketbalclub van de Benelux worden en serieus meedoen op Europees niveau.</p>
-                    
-                    <p>Deze ambitieuze doelstelling willen ze bereiken door met hetzelfde kleine 'dream team' van mensen meer impact te gaan maken. Een visie die hand in hand samen gaat met de visie van Libertech.</p>
-                    
-                    <p><strong>De uitdaging:</strong> Libertech helpt de organisatie van Heroes Den Bosch om meer impact te maken door het automatiseren van de tribune indeling voor de businessclub leden.</p>
-                </div>
-                
-                <div class="case-study-image">
-                    <img src="assets/heroes-den-bosch-libertech.jpeg" alt="Heroes Den Bosch en Libertech - Nederlandse Basketbal Beker" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="photo-placeholder" style="display: none;">
-                        <div style="font-size: 4rem; margin-bottom: 1rem;">🏆🏀</div>
-                        <p style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">Heroes Den Bosch & Libertech</p>
-                        <p style="font-size: 1rem; color: #6b7280; margin-top: 0.5rem;">Met de Nederlandse Basketbal Beker</p>
-                    </div>
-                    <p class="image-caption">Libertech en Heroes Den Bosch met de Nederlandse Basketbal Beker</p>
-                </div>
-            </div>
-            
-            <div class="testimonial-section">
-                <div class="testimonial-card">
-                    <div class="quote-mark">"</div>
-                    <blockquote>
-                        De indeling van de business club tribune is voor ons een belangrijke taak om onze business club leden op de juiste manier te kunnen verbinden. Dit was iedere thuiswedstrijd een tijdrovende klus, waar ik vaak tot de dag voor de wedstrijd tot in de late uurtjes mee bezig was om alle ad hoc wijzigingen door te voeren. 
-                        
-                        <strong>Dankzij de app van Libertech heb ik de perfecte indeling met een druk op de knop, waardoor ik meer tijd en aandacht heb voor de groei van de business club.</strong>
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <strong>Vincent Nguyen</strong><br>
-                        Commercieel Manager, Heroes Den Bosch
-                    </div>
-                </div>
-            </div>
-            
-            <div class="case-study-result">
-                <div class="result-highlight">
-                    <div class="highlight-icon">🎯</div>
-                    <h3>Het Resultaat</h3>
-                    <p>Van uren werk tot een druk op de knop - meer tijd voor wat écht belangrijk is: de groei van de business club.</p>
-                </div>
-            </div>
-            
-            <div class="case-study-cta">
-                <p><strong>Dit is een perfect voorbeeld hoe Libertech ambitieuze organisaties helpt meer impact te maken door het automatiseren van de bedrijfsvoering.</strong></p>
-                <a href="#calculator" class="cta-button" onclick="trackClick('casestudy_help_mij_ook')">Help mij ook</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Problem Section -->
     <section class="problem-section">
         <h2 class="section-title">Klaar voor de volgende stap, maar...</h2>
@@ -1596,52 +1499,6 @@
         </div>
     </section>
 
-    <!-- Case Study Section -->
-    <section class="case-study-section">
-        <div class="case-study-container">
-            <div class="case-study-header">
-                <h2>Heroes Den Bosch en Libertech samen naar de top</h2>
-                <p class="case-study-subtitle">Hoe automatisering ambitieuze organisaties helpt meer impact te maken</p>
-            </div>
-            
-            <div class="case-study-content">
-                <div class="case-study-text">
-                    <p>Nederlands meest succesvolle basketbalclub Heroes Den Bosch heeft ambitieuze doelstellingen: de beste basketbalclub van de Benelux worden en serieus meedoen op Europees niveau.</p>
-                    
-                    <p>Deze ambitieuze doelstelling willen ze bereiken door met hetzelfde kleine 'dream team' van mensen meer impact te gaan maken. Een visie die hand in hand samen gaat met de visie van Libertech.</p>
-                    
-                    <p><strong>De uitdaging:</strong> Libertech helpt de organisatie van Heroes Den Bosch om meer impact te maken door het automatiseren van de tribune indeling voor de businessclub leden.</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="quote-mark">"</div>
-                    <blockquote>
-                        De indeling van de business club tribune is voor ons een belangrijke taak om onze business club leden op de juiste manier te kunnen verbinden. Dit was iedere thuiswedstrijd een tijdrovende klus, waar ik vaak tot de dag voor de wedstrijd tot in de late uurtjes mee bezig was om alle ad hoc wijzigingen door te voeren. 
-                        
-                        <strong>Dankzij de app van Libertech heb ik de perfecte indeling met een druk op de knop, waardoor ik meer tijd en aandacht heb voor de groei van de business club.</strong>
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <strong>Vincent Nguyen</strong><br>
-                        Commercieel Manager, Heroes Den Bosch
-                    </div>
-                </div>
-            </div>
-            
-            <div class="case-study-result">
-                <div class="result-highlight">
-                    <div class="highlight-icon">🎯</div>
-                    <h3>Het Resultaat</h3>
-                    <p>Van uren werk tot een druk op de knop - meer tijd voor wat écht belangrijk is: de relatie met businessclub leden.</p>
-                </div>
-            </div>
-            
-            <div class="case-study-cta">
-                <p><strong>Dit is een perfect voorbeeld hoe Libertech ambitieuze organisaties helpt meer impact te maken door het automatiseren van de bedrijfsvoering.</strong></p>
-                <a href="#calculator" class="cta-button" onclick="trackClick('casestudy_help_mij_ook')">Help mij ook</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Results Section -->
     <section class="results-page-section" id="resultaten">
         <h2>Wat Onze Klanten Bereiken</h2>
@@ -1671,6 +1528,64 @@
         <div style="text-align: center; margin-top: 3rem;">
             <div class="quote">
                 "Stel je voor: geen keuzes meer tussen bedrijf en leven. Beide succesvol, beide vervullend."
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study-section">
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <h2>Heroes Den Bosch en Libertech samen naar de top</h2>
+                <p class="case-study-subtitle">Hoe automatisering ambitieuze organisaties helpt meer impact te maken</p>
+            </div>
+            
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <p>Nederlands meest succesvolle basketbalclub Heroes Den Bosch heeft ambitieuze doelstellingen: de beste basketbalclub van de Benelux worden en serieus meedoen op Europees niveau.</p>
+                    
+                    <p>Deze ambitieuze doelstelling willen ze bereiken door met hetzelfde kleine 'dream team' van mensen meer impact te gaan maken. Een visie die hand in hand samen gaat met de visie van Libertech.</p>
+                    
+                    <p><strong>De uitdaging:</strong> Libertech helpt de organisatie van Heroes Den Bosch om meer impact te maken door het automatiseren van de tribune indeling voor de businessclub leden.</p>
+                </div>
+                
+                <div class="case-study-image">
+                    <img src="assets/heroes-den-bosch-libertech.jpeg" alt="Heroes Den Bosch en Libertech - Nederlandse Basketbal Beker" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="photo-placeholder" style="display: none;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🏆🏀</div>
+                        <p style="color: var(--primary); font-weight: bold; font-size: 1.2rem;">Heroes Den Bosch & Libertech</p>
+                        <p style="font-size: 1rem; color: #6b7280; margin-top: 0.5rem;">Met de Nederlandse Basketbal Beker</p>
+                    </div>
+                    <p class="image-caption">Libertech en Heroes Den Bosch met de Nederlandse Basketbal Beker</p>
+                </div>
+            </div>
+            
+            <div class="testimonial-section">
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <blockquote>
+                        De indeling van de business club tribune is voor ons een belangrijke taak om onze business club leden op de juiste manier te kunnen verbinden. Dit was iedere thuiswedstrijd een tijdrovende klus, waar ik vaak tot de dag voor de wedstrijd tot in de late uurtjes mee bezig was om alle ad hoc wijzigingen door te voeren. 
+                        
+                        <strong>Dankzij de app van Libertech heb ik de perfecte indeling met een druk op de knop, waardoor ik meer tijd en aandacht heb voor de groei van de business club.</strong>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Vincent Nguyen</strong><br>
+                        Commercieel Manager, Heroes Den Bosch
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study-result">
+                <div class="result-highlight">
+                    <div class="highlight-icon">🎯</div>
+                    <h3>Het Resultaat</h3>
+                    <p>Van uren werk tot een druk op de knop - meer tijd voor wat écht belangrijk is: de groei van de business club.</p>
+                </div>
+            </div>
+            
+            <div class="case-study-cta">
+                <p><strong>Dit is een perfect voorbeeld hoe Libertech ambitieuze organisaties helpt meer impact te maken door het automatiseren van de bedrijfsvoering.</strong></p>
+                <a href="#calculator" class="cta-button" onclick="trackClick('casestudy_help_mij_ook')">Help mij ook</a>
             </div>
         </div>
     </section>
